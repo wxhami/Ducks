@@ -8,6 +8,7 @@ public class Duck
     public bool StatusSuper;
     public double Weight;
     public string Name;
+    public int ID;
 
     public bool IsAlive => CheckAlive();
         
@@ -23,7 +24,7 @@ public class Duck
 
     public void ShowDuck()
     {
-        Console.WriteLine($"Name: {Name} \nSleeping: {Sleeping} \nWeight: {Weight} \nTonus: {Tonus} \nAge: {Age}");
+        Console.WriteLine($"Name: {Name} Sleeping: {Sleeping} Weight: {Weight} Tonus: {Tonus} Age: {Age} ID: {ID}");
     }
 
     public void Eat()
