@@ -12,14 +12,14 @@ public class Duck
 
     public bool IsAlive => CheckAlive();
         
-    public Duck(string name)
+    public Duck(string name, int id)
     {
         Name = name;
         Tonus = 0;
         Sleeping = 0;
         Age = 0;
         Weight = 0;
-        
+        ID = 0;
     }
 
     public void ShowDuck()
