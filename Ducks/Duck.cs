@@ -79,6 +79,27 @@ public class Duck
 
         return true;
     }
-    
+
+    public double GetCoefficient()
+    {
+        int percents = 0;
+        
+        if (Age > 7)
+        {
+            percents += -15;
+        }
+
+        if (Weight > 10)
+        {
+            percents += -30;
+        }
+
+        if (StatusSuper)
+        {
+            percents += 10;
+        }
+
+        return Tonus + Tonus * percents;
+    }
     
 }
