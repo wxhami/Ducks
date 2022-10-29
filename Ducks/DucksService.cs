@@ -35,7 +35,7 @@ public class DucksService
 
     }
 
-    private Duck GetDuckById(int id)
+    public Duck GetDuckById(int id)
     {
         foreach (var duck in Ducks)
         {
