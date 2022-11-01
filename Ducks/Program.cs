@@ -27,7 +27,12 @@ switch (playerChoice)
 
         break;
     case 3:
-        GetDuck().ShowDuck();
+        var duck2 = GetDuck();
+
+        if (duck2 != null)
+        {
+            duck2.ShowDuck();
+        }
         break;
     case 4:
         if (ducksService.Ducks.Count > 1)
@@ -68,6 +73,7 @@ switch (playerChoice)
     case 7:
         if (CheckDucksInCollection())
         {
+
             GetDuck().Sleep();
             Console.WriteLine("Duck are sleeping...");
         }
@@ -102,9 +108,23 @@ void NotFound()
     Console.WriteLine("Not found duck :(");
 }
 
+bool CheckCountDucks()
+{
+    Console.WriteLine("One(1) or all(2) ducks?");
+    int playerChoiceCountDucks = Convert.ToInt32(Console.ReadLine());
+    if (playerChoiceCountDucks == 1)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 void CheckNull()
 {
-    if (GetDuck() null)
+    if (GetDuck( null)
     {
         
     }
