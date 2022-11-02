@@ -19,12 +19,32 @@ public class Duck
         Sleeping = 0;
         Age = 0;
         Weight = 0;
-        ID = 0;
+        ID = id;
     }
 
     public void ShowDuck()
     {
-        Console.WriteLine($"Name: {Name} Sleeping: {Sleeping} Weight: {Weight} Tonus: {Tonus} Age: {Age} ID: {ID}");
+        if (!IsAlive)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+        }
+        
+        Console.Write($"[{ID}]");
+        
+        if (StatusSuper)
+        {
+            Console.ForegroundColor = ConsoleColor.Green; 
+            Console.Write($"[{Name}]");
+            Console.ResetColor();
+        }
+        else
+        {
+            Console.Write(Name);
+        }
+        
+        Console.WriteLine($" Sleeping: {Sleeping} Weight: {Weight} Tonus: {Tonus} Age: {Age}");
+        
+        Console.ResetColor();
     }
 
     public void Eat()
@@ -55,8 +75,9 @@ public class Duck
         CheckLackOfSleep();
     }
 
-    public void Competicion()
+    public void Competition()
     {
+        CheckLackOfSleep();
         Tonus -= 2;
         Sleeping -= 2;
         Weight -= 0.2;

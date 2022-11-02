@@ -21,12 +21,17 @@ public class DucksService
         
         foreach (var duck in Ducks)
         {
-            duck.Age++;
-            double coefficient = duck.GetCoefficient();
-            if (coefficient > max)
+            if (duck.IsAlive)
             {
-                max = coefficient;
-                winnerId = duck.ID;
+                duck.Age++;
+                double coefficient = duck.GetCoefficient();
+                if (coefficient > max)
+                {
+                    max = coefficient;
+                    winnerId = duck.ID;
+                }
+            
+                duck.Competition();
             }
         }
         Duck winnerDuck =GetDuckById(winnerId);
